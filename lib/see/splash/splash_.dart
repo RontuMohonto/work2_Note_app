@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../bottom/bottom.dart';
 
-
 class splash_ extends StatefulWidget {
   const splash_({super.key});
 
@@ -14,10 +13,7 @@ class _splash_State extends State<splash_> {
   @override
   timerFunCall() async {
     await Future.delayed(Duration(seconds: 2));
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => bottom()),
-    );
+    Navigator.push(context, MaterialPageRoute(builder: (context) => bottom()));
   }
 
   void initState() {
@@ -29,11 +25,7 @@ class _splash_State extends State<splash_> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffE9F1EF),
-      appBar: AppBar(
-        backgroundColor: Colors.amber,
-        centerTitle: true,
-        title: Text("Splash screen"),
-      ),
+      appBar: AppBar(backgroundColor: Color(0xffE9F1EF)),
       body: Center(child: Image.asset("assets/logo.png")),
     );
   }

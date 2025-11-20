@@ -10,7 +10,7 @@ class My_widget extends StatelessWidget {
     return Text(
       "R",
       style: TextStyle(
-        fontSize: 60,
+        fontSize: 45,
         fontWeight: FontWeight.bold,
         color: Colors.purple.shade900,
       ),

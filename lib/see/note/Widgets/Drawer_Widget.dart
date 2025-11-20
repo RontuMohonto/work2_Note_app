@@ -1,67 +1,41 @@
 import 'package:flutter/material.dart';
 
-
-
 class DrawerWidget extends StatelessWidget {
-  const DrawerWidget({
-    super.key,
-  });
+  const DrawerWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: Colors.white,
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
             accountName: Text("Rontu Mohonto"),
-            accountEmail: Text("newscenery28@gmail.com"),
+            accountEmail: Text("rnote@.com"),
             currentAccountPicture: CircleAvatar(
               backgroundImage: NetworkImage(
-                "https://thumbs.dreamstime.com/b/colorful-customizable-cartoon-features-smiling-boy-dark-hair-red-shirt-profile-pic-illustration-335486580.jpg",
+                "https://imagedelivery.net/xE-VtsYZUS2Y8MtLMcbXAg/4a05b139a21e91fdb87f/sm",
               ),
             ),
             decoration: BoxDecoration(
-              color: Colors.deepPurple.shade900,
+              color: Colors.purple.shade900,
               borderRadius: BorderRadius.only(
-                bottomRight: Radius.circular(10),
-                bottomLeft: Radius.circular(10),
+                bottomRight: Radius.circular(20),
+                bottomLeft: Radius.circular(20),
               ),
             ),
           ),
-          SizedBox(height: 15),
-
           ListTile(
-            leading: Icon(Icons.home, color: Colors.deepPurple.shade900),
-            title: Text("Home"),
+            leading: Icon(Icons.archive, color: Colors.deepPurple.shade900),
+            title: Text("Archive"),
             onTap: () {},
           ),
-          SizedBox(height: 15),
-
           ListTile(
-            leading: Icon(Icons.person, color: Colors.deepPurple.shade900),
-            title: Text("Profile"),
+            leading: Icon(Icons.favorite_border, color: Colors.deepPurple.shade900),
+            title: Text("Favorites"),
             onTap: () {},
           ),
-          SizedBox(height: 15),
-
-          ListTile(
-            leading: Icon(Icons.settings, color: Colors.deepPurple.shade900),
-            title: Text("Settings"),
-            onTap: () {},
-          ),
-
-          SizedBox(height: 10),
-          ListTile(
-            leading: Icon(
-              Icons.privacy_tip_outlined,
-              color: Colors.deepPurple.shade900,
-            ),
-            title: Text("Privacy Policy"),
-            onTap: () {},
-          ),
-
-          SizedBox(height: 5),
 
           ListTile(
             leading: Icon(Icons.star, color: Colors.deepPurple.shade900),
@@ -76,11 +50,9 @@ class DrawerWidget extends StatelessWidget {
             title: Text("Feedback"),
             onTap: () {},
           ),
-          SizedBox(height: 15),
 
           Divider(),
 
-          SizedBox(height: 15),
           ListTile(
             leading: Icon(Icons.logout, color: Colors.red),
             title: Text("Logout"),

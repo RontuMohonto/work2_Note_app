@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../database/database.dart';
+import '../Note_add_screen/Note_add_screen.dart';
 import 'Widgets/Card_Widget.dart';
 import 'Widgets/Drawer_Widget.dart';
 import 'Widgets/name1.dart';
@@ -22,10 +23,13 @@ class _noteScreenState extends State<noteScreen> {
       drawer: DrawerWidget(),
 
       backgroundColor: Colors.white,
-      appBar: AppBar(centerTitle: true, backgroundColor: Colors.white),
+      appBar:
+      AppBar(
+          centerTitle: true,
+          backgroundColor: Colors.white),
 
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        padding:  EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -33,16 +37,31 @@ class _noteScreenState extends State<noteScreen> {
             My_widget(),
             NotesText_widget(),
             Tagline_widget(),
-            SizedBox(height: 15),
+            SizedBox(height: 5),
 
             //Search
             SearchField(),
 
-            SizedBox(height: 20),
+            SizedBox(height: 5),
 
             Builder_file(),
+            
+            
+
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => add_note()),
+          ).then((value) {
+            setState(() {});
+          });
+        },
+        backgroundColor: Colors.purple.shade900,
+        child: Icon(Icons.add, color: Colors.white, size: 40),
       ),
     );
   }

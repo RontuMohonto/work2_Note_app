@@ -27,8 +27,9 @@ class CardWidget extends StatelessWidget {
       child: Card(
         color: Colors.purple.shade900,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+          padding:  EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             spacing: 10,
             children: [
               Row(

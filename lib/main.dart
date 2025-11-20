@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/see/Details_page/Details_page.dart';
+import 'package:note_app/see/Note_add_screen/Note_add_screen.dart';
 import 'package:note_app/see/bottom/bottom.dart';
 import 'package:note_app/see/note/note.dart';
 import 'package:note_app/see/splash/splash_.dart';
@@ -13,6 +14,6 @@ class Myapp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: bottom());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: splash_());
   }
 }

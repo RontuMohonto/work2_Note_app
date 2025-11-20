@@ -6,9 +6,9 @@ class NotesText_widget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      "Notes...",
+      "Note...",
       style: TextStyle(
-        fontSize: 60,
+        fontSize: 45,
         fontWeight: FontWeight.bold,
         color: Colors.purple.shade900,
       ),
