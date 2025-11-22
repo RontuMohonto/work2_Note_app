@@ -1,5 +1,4 @@
 class NoteData {
-
   static final NoteData _instance = NoteData._internal();
 
   factory NoteData() {
@@ -13,9 +12,14 @@ class NoteData {
       "id": 0,
       "title": "Grocery List",
       "note":
-      "Buy milk, eggs and rice. Check discount on oil. Remember to buy salt too.",
+          "Buy milk, eggs and rice. Check discount on oil. Remember to buy salt too.",
       "date": "2025-11-19",
       "time": "09:30",
     },
+  ];
+
+  List<Map<String, dynamic>> Trashlist = [
+
+    
   ];
 }

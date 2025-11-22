@@ -21,36 +21,30 @@ class _noteScreenState extends State<noteScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: DrawerWidget(),
-
       backgroundColor: Colors.white,
-      appBar:
-      AppBar(
-          centerTitle: true,
-          backgroundColor: Colors.white),
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.white,
+      ),
 
       body: Padding(
-        padding:  EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Intro
             My_widget(),
             NotesText_widget(),
             Tagline_widget(),
             SizedBox(height: 5),
 
-            //Search
             SearchField(),
-
             SizedBox(height: 5),
 
             Builder_file(),
-            
-            
-
           ],
         ),
       ),
+
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
@@ -66,14 +60,21 @@ class _noteScreenState extends State<noteScreen> {
     );
   }
 
-  //Notes
-
   Expanded Builder_file() {
     return Expanded(
       child: ListView.builder(
         itemCount: NoteData().list.length,
-        shrinkWrap: true,
-        itemBuilder: (context, index) => CardWidget(i: index),
+        itemBuilder: (context, index) {
+          return CardWidget(
+            i: index,
+            onMoveTrash: () {
+              setState(() {
+                final removedItem = NoteData().list.removeAt(index);
+                NoteData().Trashlist.add(removedItem);
+              });
+            },
+          );
+        },
       ),
     );
   }

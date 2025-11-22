@@ -5,6 +5,8 @@ import 'package:note_app/see/bottom/bottom.dart';
 import 'package:note_app/see/note/note.dart';
 import 'package:note_app/see/splash/splash_.dart';
 
+import 'extra/extra.dart';
+
 void main() {
   runApp(Myapp());
 }
@@ -14,6 +16,6 @@ class Myapp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: splash_());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: extra());
   }
 }

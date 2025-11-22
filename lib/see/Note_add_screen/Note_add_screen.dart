@@ -100,7 +100,8 @@ class _add_noteState extends State<add_note> {
           Map<String, dynamic> data = {
             "title": titlecontroller.text,
             "note": detailscontroller.text,
-            "time": "${DateTime.now().hour}:${DateTime.now().minute}:${DateTime.now().second}",
+            "time":
+                "${DateTime.now().hour}:${DateTime.now().minute}:${DateTime.now().second}",
             "date":
                 "${DateTime.now().day}-${DateTime.now().month}-${DateTime.now().year}",
           };
