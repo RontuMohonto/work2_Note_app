@@ -152,20 +152,7 @@ class _extraState extends State<extra> {
                                 fontSize: 20,
                               ),
                             ),
-                            // Text(
-                            //   " মানুষগুলো অন্যায় করার সময় ",
-                            //   style: TextStyle(
-                            //     fontWeight: FontWeight.bold,
-                            //     fontSize: 20,
-                            //   ),
-                            // ),
-                            // Text(
-                            //   "    ভুলে যায় বিচারদিবসের মালিকের কথা!",
-                            //   style: TextStyle(
-                            //     fontWeight: FontWeight.bold,
-                            //     fontSize: 20,
-                            //   ),
-                            // ),
+                           
                           ],
                         ),
                       ),
