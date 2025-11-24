@@ -5,24 +5,46 @@ import 'package:note_app/database/database.dart';
 
 import '../note/note.dart';
 
-class add_note extends StatefulWidget {
-  const add_note({super.key});
+class update_note extends StatefulWidget {
+  const update_note({
+    super.key,
+    required this.title,
+    required this.details,
+    required this.index,
+  });
+
+  final String title;
+  final String details;
+  final int index;
 
   @override
-  State<add_note> createState() => _add_noteState();
+  State<update_note> createState() => _update_noteState();
 }
 
-class _add_noteState extends State<add_note> {
+class _update_noteState extends State<update_note> {
   TextEditingController titlecontroller = TextEditingController();
   TextEditingController detailscontroller = TextEditingController();
 
+  Showdata() {
+    titlecontroller.text = widget.title;
+    detailscontroller.text = widget.details;
+  }
+
+  @override
+  void initState() {
+    Showdata();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    log("=====${widget.title}==");
+    log("=====${widget.details}==");
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
-          "Add your notes hare...",
+          "Update your notes hare...",
           style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
@@ -45,11 +67,8 @@ class _add_noteState extends State<add_note> {
 
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-
                 ),
                 enabledBorder: OutlineInputBorder(
-
-
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
@@ -68,11 +87,8 @@ class _add_noteState extends State<add_note> {
 
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-
                 ),
                 enabledBorder: OutlineInputBorder(
-
-
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
@@ -82,9 +98,6 @@ class _add_noteState extends State<add_note> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          log("${titlecontroller.text}");
-          log("${detailscontroller.text}");
-
           Map<String, dynamic> data = {
             "title": titlecontroller.text,
             "note": detailscontroller.text,
@@ -93,11 +106,10 @@ class _add_noteState extends State<add_note> {
             "date":
                 "${DateTime.now().day}-${DateTime.now().month}-${DateTime.now().year}",
           };
+          NoteData().list[widget.index] = data;
 
-          log(">>>>$data");
-          log("========+${NoteData().list.length}");
-
-          NoteData().list.add(data);
+          setState(() {});
+          // NoteData().list.add(data);
           Navigator.pop((context));
         },
         backgroundColor: Colors.purple.shade900,

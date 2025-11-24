@@ -7,11 +7,7 @@ class CardWidget extends StatefulWidget {
   final int i;
   final VoidCallback onMoveTrash;
 
-  const CardWidget({
-    super.key,
-    required this.i,
-    required this.onMoveTrash,
-  });
+  const CardWidget({super.key, required this.i, required this.onMoveTrash});
 
   @override
   State<CardWidget> createState() => _CardWidgetState();
@@ -40,21 +36,18 @@ class _CardWidgetState extends State<CardWidget> {
                     log("Item moved to Trash");
                   },
                   child: ListTile(
-                    leading:
-                    Icon(Icons.delete, color: Colors.purple.shade900),
+                    leading: Icon(Icons.delete, color: Colors.purple.shade900),
                     title: Text("Move to trash"),
                   ),
                 ),
 
                 ListTile(
-                  leading:
-                  Icon(Icons.archive, color: Colors.purple.shade900),
+                  leading: Icon(Icons.archive, color: Colors.purple.shade900),
                   title: Text("Archive"),
                 ),
 
                 ListTile(
-                  leading:
-                  Icon(Icons.share, color: Colors.purple.shade900),
+                  leading: Icon(Icons.share, color: Colors.purple.shade900),
                   title: Text("Share"),
                 ),
               ],
@@ -72,9 +65,12 @@ class _CardWidgetState extends State<CardWidget> {
               date: '${NoteData().list[widget.i]['date']}',
               time: '${NoteData().list[widget.i]['time']}',
               note: '${NoteData().list[widget.i]['note']}',
+              index: widget.i,
             ),
           ),
-        );
+        ).then((v) {
+          setState(() {});
+        });
       },
 
       child: Card(

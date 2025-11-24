@@ -22,10 +22,7 @@ class _noteScreenState extends State<noteScreen> {
     return Scaffold(
       drawer: DrawerWidget(),
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.white,
-      ),
+      appBar: AppBar(centerTitle: true, backgroundColor: Colors.white),
 
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20),
