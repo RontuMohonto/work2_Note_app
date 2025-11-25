@@ -16,12 +16,7 @@ class bottom extends StatefulWidget {
 
 class _bottomState extends State<bottom> {
   int selectedIndex = 0;
-  List Screens = [
-    noteScreen(),
-    folder_Screen(),
-    trash_Screen(),
-    settingsScreen(),
-  ];
+  List Screens = [noteScreen(), trash_Screen()];
 
   @override
   Widget build(BuildContext context) {
@@ -46,17 +41,10 @@ class _bottomState extends State<bottom> {
             icon: Icon(Icons.note_add_outlined),
             label: "Notes",
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.folder_copy_rounded),
-            label: "Folders",
-          ),
+
           BottomNavigationBarItem(
             icon: Icon(Icons.restore_from_trash),
             label: "Trash",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: "Settings",
           ),
         ],
       ),

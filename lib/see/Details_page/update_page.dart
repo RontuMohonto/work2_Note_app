@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:note_app/database/database.dart';
 
+import '../bottom/bottom.dart';
 import '../note/note.dart';
 
 class update_note extends StatefulWidget {
@@ -97,7 +98,18 @@ class _update_noteState extends State<update_note> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        elevation: 5,
         onPressed: () {
+
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(
+            SnackBar(
+              content: Text(
+                "Note Updated Successfully!",
+              ),
+            ),
+          );
           Map<String, dynamic> data = {
             "title": titlecontroller.text,
             "note": detailscontroller.text,
@@ -109,14 +121,13 @@ class _update_noteState extends State<update_note> {
           NoteData().list[widget.index] = data;
 
           setState(() {});
-          // NoteData().list.add(data);
-          Navigator.pop((context));
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => bottom()));
         },
         backgroundColor: Colors.purple.shade900,
         child: Text(
-          "Save",
+          "Update",
           style: TextStyle(
-            fontSize: 20,
+            fontSize: 15,
             color: Colors.white,
             fontWeight: FontWeight.bold,
           ),
