@@ -34,6 +34,9 @@ class _CardWidgetState extends State<CardWidget> {
                     widget.onMoveTrash();
 
                     log("Item moved to Trash");
+                    ScaffoldMessenger.of(
+                      context,
+                    ).showSnackBar(SnackBar(content: Text("Moved to trash")));
                   },
                   child: ListTile(
                     leading: Icon(Icons.delete, color: Colors.purple.shade900),
