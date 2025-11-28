@@ -2,8 +2,6 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 
-import '../Settings/settings.dart';
-import '../folder/folder_screen.dart';
 import '../note/note.dart';
 import '../trash/trash_.dart';
 
@@ -23,6 +21,7 @@ class _bottomState extends State<bottom> {
     return Scaffold(
       body: Screens[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
         selectedItemColor: Colors.purple.shade900,
         unselectedItemColor: Colors.grey,
 

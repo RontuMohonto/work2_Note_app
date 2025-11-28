@@ -20,6 +20,7 @@ class _trash_ScreenState extends State<trash_Screen> {
   Widget build(BuildContext context) {
     final trash = NoteData().Trashlist;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
         title: Text("Trash", style: TextStyle(color: Colors.white)),
