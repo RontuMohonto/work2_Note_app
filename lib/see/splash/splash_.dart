@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../bottom/bottom.dart';
+import '../reg/regestration.dart';
 
 class splash_ extends StatefulWidget {
   const splash_({super.key});
@@ -13,7 +14,7 @@ class _splash_State extends State<splash_> {
   @override
   timerFunCall() async {
     await Future.delayed(Duration(seconds: 2));
-    Navigator.push(context, MaterialPageRoute(builder: (context) => bottom()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => registration()));
   }
 
   void initState() {
