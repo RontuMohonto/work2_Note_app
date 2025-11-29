@@ -9,6 +9,8 @@ import 'package:note_app/see/reg/regestration.dart';
 import 'package:note_app/see/splash/splash_.dart';
 import 'package:note_app/student_model/screen.dart';
 
+import 'api_services/response.dart';
+
 void main() {
   runApp(Myapp());
 }
@@ -18,6 +20,6 @@ class Myapp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: splash_());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: apiclasses());
   }
 }

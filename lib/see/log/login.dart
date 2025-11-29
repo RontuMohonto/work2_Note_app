@@ -69,12 +69,16 @@ class _loginState extends State<login> {
                     ),
                   ),
                   onPressed: () {
+                    setState(() {
+
+                    });
 
                     if (gmailController.text == widget.registrationGmail &&
                         passwordController.text ==
                             widget.registrationPassword) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(content: Text("Login Successful")),
+
                       );
 
                       Navigator.pushReplacement(
